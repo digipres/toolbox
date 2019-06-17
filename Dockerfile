@@ -5,7 +5,7 @@ RUN python -m bash_kernel.install
 
 RUN wget -qO - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | apt-key add -  && \
     echo "deb http://dl.bintray.com/siegfried/debian wheezy main" | tee -a /etc/apt/sources.list  && \
-    apt-get update && apt-get install -y siegfried mediainfo default-jre ffmpeg && \
+    apt-get update && apt-get install -y siegfried mediainfo default-jre ffmpeg cloc && \
     apt-get install -y cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/*
 

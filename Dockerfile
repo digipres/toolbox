@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y golang mediainfo default-jre ffmpeg clo
 
 RUN gem install github-linguist
 
-RUN go install github.com/richardlehane/siegfried/cmd/sf@latest && \
+RUN go get github.com/richardlehane/siegfried && \
     sf -update
 
 RUN curl -s -o /usr/share/java/tika-app-2.9.2.jar https://www-eu.apache.org/dist/tika/tika-app-2.9.2.jar && \

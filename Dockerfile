@@ -1,4 +1,4 @@
-FROM python:3.7-bullseye
+FROM python:3.10-bullseye
 
 RUN pip install --no-cache notebook bash_kernel opf-fido
 RUN python -m bash_kernel.install

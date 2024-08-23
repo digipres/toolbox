@@ -3,18 +3,17 @@ FROM python:3.7-bullseye
 RUN pip install --no-cache notebook bash_kernel opf-fido
 RUN python -m bash_kernel.install
 
-# Use offical Siegfried install setup, modified for Docker usage:
-RUN curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x20F802FE798E6857" | gpg --dearmor > /usr/share/keyrings/siegfried-archive-keyring.gpg && \
-echo "deb [signed-by=/usr/share/keyrings/siegfried-archive-keyring.gpg] https://www.itforarchivists.com/ stretch main" > /etc/apt/sources.list.d/siegfried.list
-
-RUN apt-get update && apt-get install -y siegfried mediainfo default-jre ffmpeg cloc && \
+RUN apt-get update && apt-get install -y golang mediainfo default-jre ffmpeg cloc && \
     apt-get install -y cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN sf -update && gem install github-linguist --no-ri --no-rdoc
+RUN gem install github-linguist --no-ri --no-rdoc
 
-RUN curl -s -o /usr/share/java/tika-app-1.21.jar https://www-eu.apache.org/dist/tika/tika-app-1.21.jar && \
-    ln -s /usr/share/java/tika-app-1.21.jar /usr/share/java/tika-app.jar
+RUN go install github.com/richardlehane/siegfried/cmd/sf@latest && \
+    sf -update
+
+RUN curl -s -o /usr/share/java/tika-app-2.9.2.jar https://www-eu.apache.org/dist/tika/tika-app-2.9.2.jar && \
+    ln -s /usr/share/java/tika-app-2.9.2.jar /usr/share/java/tika-app.jar
 
 COPY droid /usr/share/java/droid
 RUN ln -s /usr/share/java/droid/droid.sh /usr/local/bin/droid.sh

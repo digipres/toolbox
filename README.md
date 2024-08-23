@@ -9,7 +9,7 @@ A Docker image designed to make it easy to experiment with tools for Digital Pre
 
 Only light-weight tools are pre-installed, so the Docker image size (and hence Sandbox launch times) can be kept low.
 
- - [Siegfried](https://www.itforarchivists.com/siegfried) (using the 'deluxe' format signatures which includes mutliple sources).
+ - [Siegfried](https://www.itforarchivists.com/siegfried)
  - [File](https://www.darwinsys.com/file/)
  - [TrID](http://mark0.net/soft-trid-e.html)
  - [MediaInfo](https://github.com/MediaArea/MediaInfo)

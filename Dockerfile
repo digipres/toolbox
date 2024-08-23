@@ -3,7 +3,7 @@ FROM python:3.7-bullseye
 RUN pip install --no-cache notebook bash_kernel opf-fido
 RUN python -m bash_kernel.install
 
-RUN apt-get update && apt-get install -y golang mediainfo default-jre ffmpeg cloc && \
+RUN apt-get update && apt-get install -y mediainfo default-jre ffmpeg cloc && \
     apt-get install -y cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/*
 

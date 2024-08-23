@@ -9,18 +9,19 @@ RUN apt-get update && apt-get install -y golang mediainfo default-jre ffmpeg clo
 
 RUN gem install github-linguist
 
-RUN go get github.com/richardlehane/siegfried/cmd/sf && \
+RUN curl -s -L -O https://github.com/richardlehane/siegfried/releases/download/v1.11.1/siegfried_1.11.1-1_amd64.deb && \
+    dpkg -i siegfried_1.11.1-1_amd64.deb && \
     sf -update
 
-RUN curl -s -o /usr/share/java/tika-app-2.9.2.jar https://www-eu.apache.org/dist/tika/tika-app-2.9.2.jar && \
+RUN curl -s -L -o /usr/share/java/tika-app-2.9.2.jar https://dlcdn.apache.org/tika/2.9.2/tika-app-2.9.2.jar && \
     ln -s /usr/share/java/tika-app-2.9.2.jar /usr/share/java/tika-app.jar
 
 COPY droid /usr/share/java/droid
 RUN ln -s /usr/share/java/droid/droid.sh /usr/local/bin/droid.sh
 COPY tika.sh /usr/local/bin/tika.sh
 
-RUN curl -s -O http://mark0.net/download/trid_linux_64.zip && \
-    curl -s -O http://mark0.net/download/triddefs.zip && \
+RUN curl -s -L -O http://mark0.net/download/trid_linux_64.zip && \
+    curl -s -L -O http://mark0.net/download/triddefs.zip && \
     unzip trid_linux_64.zip && unzip triddefs.zip && chmod +x ./trid && \
     cp ./trid /usr/local/bin/trid && cp triddefs.trd /usr/local/bin/
 

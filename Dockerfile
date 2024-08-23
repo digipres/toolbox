@@ -4,8 +4,8 @@ RUN pip install --no-cache notebook bash_kernel opf-fido
 RUN python -m bash_kernel.install
 
 # Use offical Siegfried install setup, modified for Docker usage:
-RUN curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x20F802FE798E6857" | gpg --dearmor | tee /usr/share/keyrings/siegfried-archive-keyring.gpg && \
-echo "deb [signed-by=/usr/share/keyrings/siegfried-archive-keyring.gpg] https://www.itforarchivists.com/ bullseye main" | tee -a /etc/apt/sources.list.d/siegfried.list
+RUN curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x20F802FE798E6857" | gpg --dearmor > /usr/share/keyrings/siegfried-archive-keyring.gpg && \
+echo "deb [signed-by=/usr/share/keyrings/siegfried-archive-keyring.gpg] https://www.itforarchivists.com/ stretch main" > /etc/apt/sources.list.d/siegfried.list
 
 RUN apt-get update && apt-get install -y siegfried mediainfo default-jre ffmpeg cloc && \
     apt-get install -y cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 

@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y golang mediainfo default-jre ffmpeg clo
     apt-get install -y cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN gem install github-linguist --no-ri --no-rdoc
+RUN gem install github-linguist --no-rdoc
 
 RUN go install github.com/richardlehane/siegfried/cmd/sf@latest && \
     sf -update

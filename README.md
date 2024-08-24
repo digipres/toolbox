@@ -32,8 +32,6 @@ These aren't installed by default, but the [Sandbox](https://github.com/digipres
 - Handbrake
 - MediaConch
 - [EPUBCheck](https://www.w3.org/publishing/epubcheck/)
-- [Docling](https://pypi.org/project/docling/)
-- [GROBID](https://grobid.readthedocs.io/)
 
 ## Inspirations
 

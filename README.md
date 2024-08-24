@@ -31,6 +31,7 @@ These aren't installed by default, but the [Sandbox](https://github.com/digipres
 - JHOVE
 - Handbrake
 - MediaConch
+- [EPUBCheck](https://www.w3.org/publishing/epubcheck/)
 
 ## Inspirations
 

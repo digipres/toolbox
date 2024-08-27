@@ -26,6 +26,7 @@ These aren't installed by default, but the [Sandbox](https://github.com/digipres
 
 ### To Consider
 
+- RClone
 - VeraPDF
 - JHOVE
 - Handbrake

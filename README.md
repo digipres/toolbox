@@ -31,6 +31,7 @@ docker history --no-trunc toolbox | grep ffmpeg
  - [Fido](https://github.com/openpreserve/fido)
  - [File](https://www.darwinsys.com/file/)
  - [MediaInfo](https://github.com/MediaArea/MediaInfo)
+ - [RClone](https://rclone.org/)
  - [Siegfried](https://www.itforarchivists.com/siegfried)
  - [TrID](http://mark0.net/soft-trid-e.html)
 

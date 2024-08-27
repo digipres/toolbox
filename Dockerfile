@@ -8,7 +8,8 @@
 FROM python:3.11-slim-bullseye
 
 # Some (smallish) tools and support for installing more (69MB)
-RUN apt-get update && apt-get install -y curl mediainfo cloc unzip file && \
+RUN apt-get update && \ 
+    apt-get install -y unzip curl xz-utils gzip mediainfo cloc file && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install JRE for Java programs (headless 250MB, headful is 431MB)

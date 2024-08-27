@@ -7,23 +7,22 @@ A Docker image designed to make it easy to experiment with tools for Digital Pre
 
 ### Pre-installed
 
-Only light-weight tools are pre-installed, so the Docker image size (and hence Sandbox launch times) can be kept low.
-
- - [Siegfried](https://www.itforarchivists.com/siegfried)
- - [File](https://www.darwinsys.com/file/)
- - [TrID](http://mark0.net/soft-trid-e.html)
- - [MediaInfo](https://github.com/MediaArea/MediaInfo)
+ - [Apache Tika](https://tika.apache.org/)
  - [CLOC](https://github.com/AlDanial/cloc)
+ - [DROID](http://digital-preservation.github.io/droid/)
+ - [ffmpeg](https://ffmpeg.org) including [ffprobe](https://ffmpeg.org/ffprobe.html)
+ - [Fido](https://github.com/openpreserve/fido)
+ - [File](https://www.darwinsys.com/file/)
+ - [GitHub Linguist](https://github.com/github/linguist)
+ - [MediaInfo](https://github.com/MediaArea/MediaInfo)
+ - [Siegfried](https://www.itforarchivists.com/siegfried)
+ - [TrID](http://mark0.net/soft-trid-e.html)
 
 ### Verified Installable
 
 These aren't installed by default, but the [Sandbox](https://github.com/digipres/sandbox) shows how to install them.
 
- - [Apache Tika](https://tika.apache.org/)
- - [DROID](http://digital-preservation.github.io/droid/)
- - [Fido](https://github.com/openpreserve/fido)
- - [ffmpeg](https://ffmpeg.org) including [ffprobe](https://ffmpeg.org/ffprobe.html)
- - [GitHub Linguist](https://github.com/github/linguist)
+ - [pdfcpu](https://pdfcpu.io)
 
 ### To Consider
 

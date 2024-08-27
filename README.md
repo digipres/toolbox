@@ -3,26 +3,51 @@ DigiPres Toolbox
 
 A Docker image designed to make it easy to experiment with tools for Digital Preservation.  Designed to be used via the [DigiPres Sandbox](https://github.com/digipres/sandbox) and the [DigiPres Workbench](https://github.com/digipres/workbench).
 
+Build locally with e.g.
+
+```
+docker build . -t toolbox
+```
+
+Then run with
+
+```
+docker run -it toolbox bash
+```
+
 ## Supported Tools
+
+Large (>>1GB) images don't seem to run well on Binder, so we can't install everything we'd like to. e.g. `ffmpeg` takes up 0.5GB!
+
+These sizes can be determined by using separate installation lines in the `Dockerfile` and then using commands like this to see what happened and what size the additional layer is:
+
+```
+docker history --no-trunc toolbox | grep ffmpeg
+```
 
 ### Pre-installed
 
- - [Apache Tika](https://tika.apache.org/)
  - [CLOC](https://github.com/AlDanial/cloc)
- - [DROID](http://digital-preservation.github.io/droid/)
- - [ffmpeg](https://ffmpeg.org) including [ffprobe](https://ffmpeg.org/ffprobe.html)
  - [Fido](https://github.com/openpreserve/fido)
  - [File](https://www.darwinsys.com/file/)
- - [GitHub Linguist](https://github.com/github/linguist)
  - [MediaInfo](https://github.com/MediaArea/MediaInfo)
  - [Siegfried](https://www.itforarchivists.com/siegfried)
  - [TrID](http://mark0.net/soft-trid-e.html)
 
 ### Verified Installable
 
-These aren't installed by default, but the [Sandbox](https://github.com/digipres/sandbox) shows how to install them.
+These aren't installed by default because of their size, but the [Sandbox](https://github.com/digipres/sandbox) indicates how to download and install them.
 
+ - [Apache Tika](https://tika.apache.org/)
+ - [DROID](http://digital-preservation.github.io/droid/)
+ - [ffmpeg](https://ffmpeg.org) including [ffprobe](https://ffmpeg.org/ffprobe.html)
  - [pdfcpu](https://pdfcpu.io)
+
+### Cannot Be Installed
+
+These require root access to install but take up too much space
+
+ - [GitHub Linguist](https://github.com/github/linguist) (200-400MB in size depending on base image, mostly down to requiring a full build environment)
 
 ### To Consider
 

@@ -52,7 +52,6 @@ These require root access to install but take up too much space
 
 ### To Consider
 
-- RClone
 - VeraPDF
 - JHOVE
 - Handbrake

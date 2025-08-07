@@ -1,4 +1,22 @@
 {
   "build": { "dockerfile": "../Dockerfile" },
-  "features": {}
+  "features": {},
+  "forwardPorts": [3000],
+  "customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+        "workbench.colorTheme": "Default Dark Modern"
+      },
+			"extensions": []
+		},
+    // Configure properties specific to Codespaces.
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "Dockerfile"
+      ]
+	  }
+  }
 }

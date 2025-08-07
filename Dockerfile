@@ -47,21 +47,21 @@ RUN curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
 #
 
 # Install GitHub Linguist (~200MB at least, depending on shared deps)
-#RUN apt-get update && \
-#    apt-get install -y build-essential cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
-#    gem install github-linguist && \
-#    apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y build-essential cmake pkg-config libicu-dev zlib1g-dev libcurl4-openssl-dev libssl-dev ruby-dev && \ 
+    gem install github-linguist && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install ffmpeg for a/v formats (484MB!)
-# RUN apt-get update && apt-get install -y ffmpeg && \
-#    apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y ffmpeg && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Apache Tika (needs Java)
-#ENV TIKA_VERSION=2.9.2
-#RUN curl -s -L -o /usr/share/java/tika-app-${TIKA_VERSION}.jar https://dlcdn.apache.org/tika/${TIKA_VERSION}/tika-app-${TIKA_VERSION}.jar && \
-#    ln -s /usr/share/java/tika-app-${TIKA_VERSION}.jar /usr/share/java/tika-app.jar
-#COPY tika.sh /usr/local/bin/tika.sh
+ENV TIKA_VERSION=2.9.2
+RUN curl -s -L -o /usr/share/java/tika-app-${TIKA_VERSION}.jar https://dlcdn.apache.org/tika/${TIKA_VERSION}/tika-app-${TIKA_VERSION}.jar && \
+    ln -s /usr/share/java/tika-app-${TIKA_VERSION}.jar /usr/share/java/tika-app.jar
+COPY tika.sh /usr/local/bin/tika.sh
 
 # Install DROID (needs Java)
-#COPY droid /usr/share/java/droid
-#RUN ln -s /usr/share/java/droid/droid.sh /usr/local/bin/droid.sh
+COPY droid /usr/share/java/droid
+RUN ln -s /usr/share/java/droid/droid.sh /usr/local/bin/droid.sh

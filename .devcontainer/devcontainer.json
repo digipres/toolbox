@@ -14,16 +14,9 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
-        "workbench.colorTheme": "Default Dark Modern"
+        "workbench.colorTheme": "Default Light+"
       },
 			"extensions": []
-		},
-    // Configure properties specific to Codespaces.
-    "codespaces": {
-      "openFiles": [
-        "README.md",
-        "Dockerfile"
-      ]
-	  }
+		}
   }
 }

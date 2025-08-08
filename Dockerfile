@@ -13,11 +13,11 @@ RUN apt-get update && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install JRE for Java programs (headless 250MB, headful is 431MB)
-RUN apt-get update && apt-get install -y default-jre-headless && \
+RUN apt-get update && apt-get install -y default-jre && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Siegfried (71MB)
-ENV SF_VERSION=1.11.1
+ENV SF_VERSION=1.11.2
 ENV SF_DEB=siegfried_${SF_VERSION}-1_amd64.deb
 RUN curl -s -L -O https://github.com/richardlehane/siegfried/releases/download/v${SF_VERSION}/${SF_DEB} && \
     dpkg -i ${SF_DEB} && \
@@ -57,7 +57,7 @@ RUN apt-get update && apt-get install -y ffmpeg && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Apache Tika (needs Java)
-ENV TIKA_VERSION=3.2.1
+ENV TIKA_VERSION=3.2.2
 RUN curl -s -L -o /usr/share/java/tika-app-${TIKA_VERSION}.jar https://dlcdn.apache.org/tika/${TIKA_VERSION}/tika-app-${TIKA_VERSION}.jar && \
     ln -s /usr/share/java/tika-app-${TIKA_VERSION}.jar /usr/share/java/tika-app.jar
 COPY tika.sh /usr/local/bin/tika.sh
@@ -65,3 +65,10 @@ COPY tika.sh /usr/local/bin/tika.sh
 # Install DROID (needs Java)
 COPY droid /usr/share/java/droid
 RUN ln -s /usr/share/java/droid/droid.sh /usr/local/bin/droid.sh
+
+#
+# Final setup...
+# 
+
+# Set bash as default shell
+RUN chsh -s /bin/bash root

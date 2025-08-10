@@ -1,7 +1,7 @@
 {
   "build": { "dockerfile": "../Dockerfile" },
   "features": {
-    "ghcr.io/devcontainers/features/desktop:1": {}
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
   "forwardPorts": [6080],
   "portsAttributes": {

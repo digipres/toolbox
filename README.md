@@ -3,10 +3,6 @@ DigiPres Toolbox
 
 A Docker image designed to make it easy to experiment with tools for Digital Preservation.  Designed to be used via the [DigiPres Sandbox](https://github.com/digipres/sandbox) and the [DigiPres Workbench](https://github.com/digipres/workbench).
 
-You can also run the Toolbox directly on GitHub:
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/digipres/toolbox)
-
 ## Local Build
 
 Build locally with e.g.

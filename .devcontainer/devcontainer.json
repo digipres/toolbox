@@ -14,7 +14,7 @@
   },
   "remoteUser": "root",
   "containerUser": "root",
-  "updateRemoteUserUID": false,
+  "updateRemoteUserUID": true,
   "customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {

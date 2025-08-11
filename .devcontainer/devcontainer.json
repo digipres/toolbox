@@ -9,6 +9,9 @@
       "label": "desktop"
     }
   },
+  "containerEnv": {
+    "VNC_RESOLUTION": "1280x1024x16"
+  },
   "customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {

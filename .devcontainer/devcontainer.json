@@ -12,6 +12,9 @@
   "containerEnv": {
     "VNC_RESOLUTION": "1280x1024x16"
   },
+  "remoteUser": "root",
+  "containerUser": "root",
+  "updateRemoteUserUID": false,
   "customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
@@ -19,7 +22,9 @@
 			"settings": {
         "workbench.colorTheme": "Default Light+"
       },
-			"extensions": []
+			"extensions": [ 
+        "vscodevim.vim"
+      ]
 		}
   }
 }
